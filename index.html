@@ -1,0 +1,107 @@
+<!-- <style>
+  #score_rating {
+    color: #000;
+    font-weight: 700;
+    font-size: 23px;
+    text-align: center;
+    margin: 0 20px 0 40px;
+    font-family: montserrat;
+  }
+  #score_rating_imp {
+    color: #000;
+    font-size: 23px;
+    font-weight: 400;
+    text-align: center;
+    font-family: montserrat;
+  }
+  #score_rating_strength,
+  #relationship {
+    color: #000;
+    font-size: 20px;
+    text-align: justify;
+    font-family: montserrat;
+  }
+</style>
+<h2 id="score_rating"></h2>
+<br />
+<p id="score_rating_imp"></p>
+<br />
+<p id="score_rating_strength"></p>
+<script>
+  // 0 - mastery level, 1 - sub headline, 2 - your strength
+  var score_rating = {
+    A: [
+      "Mastery Level",
+      "You have mastered the art of using fulfillment as a tool to create wealth.",
+      "Your results indicate a high level of mastery in key life areas, showing that you’ve cultivated a life rich in relationships, health, purpose, and personal growth. You’re living with intention and harnessing your full potential.",
+      "Your deep-rooted connections with loved ones provide a solid foundation for personal and professional success. The strength of your social network is a testament to your ability to nurture meaningful relationships.",
+      "Your commitment to physical and mental well-being enables you to maintain high energy levels and resilience, essential for sustaining success and happiness.",
+      "Living with a clear sense of purpose fuels your daily activities with passion and fulfillment, driving you towards your goals with unwavering determination.",
+      "Your continuous pursuit of new experiences and personal development keeps you evolving and adapting, ensuring you remain at the forefront of your field.",
+      "As a Legacy Leader, you have the unique opportunity to further refine your leadership skills and expand your impact. Join our Power of Potential Membership to access advanced strategies for sustaining this level of fulfillment and wealth creation.",
+      "Sign up for our exclusive membership to access personalized coaching, advanced resources, and a community of like-minded leaders. Together, we'll help you scale new heights and leave a lasting legacy.",
+    ],
+    B: [
+      "Proficiency Level",
+      "You have done a beautiful job navigating life so far, but you know there is something more.",
+      "You’ve built a solid foundation in many areas of your life, showing resilience and a drive for self-improvement. You’re aware of the potential for greater alignment and fulfillment.",
+      "While you value your connections, there is potential to deepen these relationships and derive more joy and support from them.",
+      "Your overall health is good, but there are areas where you can enhance your well-being, ensuring you have the vitality to pursue your passions.",
+      "You have a clear idea of your purpose but may struggle to stay aligned with it. Focusing on this alignment will bring greater satisfaction and drive.",
+      "Occasionally stepping out of your comfort zone will enrich your life with new experiences and personal growth.",
+      "The Leader Within Experience will help you unlock deeper insights and strategies for aligning your life with your highest potential. Learn to unlearn old patterns and embrace bold new approaches to personal and professional growth.",
+      "Engage in our comprehensive program designed to elevate your self-awareness, confidence, and leadership capabilities.",
+    ],
+    C: [
+      "Growth Level",
+      "We commend you for the courage and self-awareness required to take this quiz.",
+      "You’ve recognized areas in need of improvement and have the courage to seek change. You are aware that you’ve been sacrificing too much without seeing the desired progress.",
+      "Your relationships might need more investment of time and effort to bring back joy and support into your life.",
+      "Health often takes a backseat, leading to physical and mental stress. Prioritizing your well-being will significantly enhance your quality of life.",
+      "Discovering and aligning with your purpose can transform your daily activities from mundane to fulfilling.",
+      "You have the knowledge but feel overwhelmed. Clarifying your goals and taking consistent action can lead to significant progress.",
+      "Personalized 1:1 coaching sessions with Cari and/or Leah will help you navigate through confusion and find clarity. Uncover the root causes of your challenges and develop actionable strategies for transformation.",
+      "Schedule a breakthrough session to start your deep awakening journey. Experience customized support and guidance to achieve your personal and professional goals.",
+    ],
+    D: [
+      "Awareness Level",
+      "We are here for you and commend your courage to seek awareness and hope.",
+      "Your courage to take this quiz shows a readiness for change and a desire for a better life. You’re experiencing significant stress and disconnection, but you’re seeking a way out.",
+      "Feeling disconnected can lead to stress. Rebuilding your social connections will bring back joy and support.",
+      "High levels of stress and neglecting health can take a toll. Focusing on self-care and mental well-being is crucial.",
+      "Feeling disconnected from a sense of purpose can be disheartening. Finding your purpose will bring a sense of direction and fulfillment.",
+      "Stagnation in personal growth can be frustrating. Embracing new learning opportunities will invigorate your life.",
+      "Schedule a breakthrough call to gain immediate support and guidance. Let us help you navigate your current challenges, find hope, and take the first steps towards reclaiming your joy and well-being.",
+      "Take action now by scheduling a call to discuss your unique situation. Our team is here to support you every step of the way.",
+    ],
+  };
+  if (score >= 85) {
+    document.getElementById("score_rating").innerHTML = score_rating["A"][0];
+    document.getElementById("score_rating_imp").innerHTML =
+      score_rating["A"][1];
+    document.getElementById(
+      "score_rating_strength"
+    ).innerHTML = `<b>Your Strength: </b>${score_rating["A"][2]} Below are some <b>Insights.</b>`;
+  } else if (score >= 69) {
+    document.getElementById("score_rating").innerHTML = score_rating["B"][0];
+    document.getElementById("score_rating_imp").innerHTML =
+      score_rating["B"][1];
+    document.getElementById(
+      "score_rating_strength"
+    ).innerHTML = `<b>Your Strength: </b>${score_rating["B"][2]} Below are some <b>Insights.</b>`;
+  } else if (score >= 53) {
+    document.getElementById("score_rating").innerHTML = score_rating["C"][0];
+    document.getElementById("score_rating_imp").innerHTML =
+      score_rating["C"][1];
+    document.getElementById(
+      "score_rating_strength"
+    ).innerHTML = `<b>Your Strength: </b>${score_rating["C"][2]} Below are some <b>Insights.</b>`;
+  } else if (score >= 0) {
+    document.getElementById("score_rating").innerHTML = score_rating["D"][0];
+    document.getElementById("score_rating_imp").innerHTML =
+      score_rating["D"][1];
+    document.getElementById(
+      "score_rating_strength"
+    ).innerHTML = `<b>Your Strength: </b>${score_rating["D"][2]} Below are some <b>Insights.</b>`;
+  }
+</script> -->

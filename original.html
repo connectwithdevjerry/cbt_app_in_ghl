@@ -1,0 +1,1009 @@
+<!-- <style>
+  @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+  * {
+    font-family: "Josefin Sans", sans-serif;
+    color: #002c47;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .ishift-logo {
+    width: 4rem;
+  }
+  .nav-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .navbar {
+    box-sizing: border-box;
+    display: flex;
+    gap: 10px;
+    font-size: 0.9rem;
+    width: fit-content;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center !important;
+    font-weight: 700;
+    color: #07456c;
+    padding-top: 7rem;
+  }
+  .navbar span {
+    letter-spacing: 0.2rem;
+  }
+  .h1-choose {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2.5rem;
+    margin-bottom: 3rem;
+    box-sizing: border-box;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 20px 0;
+    background-color: #fff;
+  }
+  .options {
+    width: 38rem;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    margin-bottom: 120px;
+  }
+  .options div {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+  .options div label {
+    margin-left: 10px;
+  }
+  .error {
+    border: 2px solid red;
+    width: 45vw;
+    box-sizing: border-box;
+    margin: 30px auto;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: red;
+    display: none;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .error span {
+    margin-left: 15px;
+  }
+  .progressbar {
+    width: 100vw;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: #fce9db;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .progressbar span {
+    position: absolute;
+    right: 15px;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .progress {
+    background: linear-gradient(0.25turn, #99ac9c, #45706e, #19618e);
+    /* width: 80%; */
+    height: inherit;
+  }
+  .question {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .quiz {
+    /* display: none; */
+  }
+  .accelerators {
+    display: none;
+  }
+  .next,
+  .prefinal {
+    width: 50%;
+    margin: 150px auto;
+    display: flex;
+    justify-content: center;
+  }
+  .prefinal {
+    justify-content: space-between;
+  }
+  .next button {
+    background-color: #ff510a;
+    color: #fef6f0;
+    padding: 20px 40px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .prev {
+    padding: 20px 40px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .final {
+    background-color: #fce9db;
+    padding: 20px 40px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+</style>
+<div id="quiz" class="quiz">
+  <div class="navbar">
+    <img
+      src="https://storage.googleapis.com/msgsndr/aaSJWzluQYS0JEPnILtJ/media/669412128e395dc176f57b4a.png"
+      alt="ishift-logo"
+      class="ishift-logo"
+    />
+    <span>THE LIFESCORE ASSESSMENT</span>
+  </div>
+  <div id="Qerror" class="error">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="15"
+      fill="red"
+      viewBox="0 0 512 512"
+    >
+      <path
+        d="M504 256c0 137-111 248-248 248S8 393 8 256C8 119.1 119 8 256 8s248 111.1 248 248zm-248 50c-25.4 0-46 20.6-46 46s20.6 46 46 46 46-20.6 46-46-20.6-46-46-46zm-43.7-165.3l7.4 136c.3 6.4 5.6 11.3 12 11.3h48.5c6.4 0 11.6-5 12-11.3l7.4-136c.4-6.9-5.1-12.7-12-12.7h-63.4c-6.9 0-12.4 5.8-12 12.7z"
+      />
+    </svg>
+    <span>
+      There was a problem with your submission. Please review the fields below.
+    </span>
+  </div>
+  <div class="h1-choose">
+    <h1>Choose the phrase from each group that<br />best describes you</h1>
+  </div>
+  <div class="options">
+    <p class="question">
+      1. How do you feel about your connections with loved ones and your broader
+      social network?
+    </p>
+    <div>
+      <input type="radio" name="Q1" id="QA1" />
+      <label for="QA1"
+        ><p style="text-align: left">
+          My relationships are fulfilling and energize me daily.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q1" id="QB1" />
+      <label for="QB1"
+        ><p style="text-align: left">
+          I value my relationships, but they sometimes require more effort than
+          I can give.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q1" id="QC1" />
+      <label for="QC1"
+        ><p style="text-align: left">
+          My relationships are currently on the back burner; I haven't invested
+          much time in them.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q1" id="QD1" />
+      <label for="QD1"
+        ><p style="text-align: left">
+          I feel disconnected and like my relationships are causing more stress
+          than joy.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div id="mopt" class="options">
+    <p class="question">
+      2. How would you describe your current state of physical and mental
+      health?
+    </p>
+    <div>
+      <input type="radio" name="Q2" id="QA2" />
+      <label for="QA2"
+        ><p style="text-align: left">
+          I feel energetic, healthy, and mentally balanced.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q2" id="QB2" />
+      <label for="QB2"
+        ><p style="text-align: left">
+          I have good health overall, but there are areas I need to improve.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q2" id="QC2" />
+      <label for="QC2"
+        ><p style="text-align: left">
+          I often neglect my health due to other priorities.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q2" id="QD2" />
+      <label for="QD2"
+        ><p style="text-align: left">
+          I feel physically drained and mentally stressed most of the time.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      3. How aligned do you feel with your life’s purpose and daily activities?
+    </p>
+    <div>
+      <input type="radio" name="Q3" id="QA3" />
+      <label for="QA3"
+        ><p style="text-align: left">
+          I feel a strong sense of purpose and fulfillment in my daily life.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q3" id="QB3" />
+      <label for="QB3"
+        ><p style="text-align: left">
+          I have a clear idea of my purpose but sometimes struggle to stay
+          aligned with it.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q3" id="QC3" />
+      <label for="QC3"
+        ><p style="text-align: left">
+          I’m still figuring out what my purpose is and how to align my life
+          with it.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q3" id="QD3" />
+      <label for="QD3"
+        ><p style="text-align: left">
+          I feel disconnected from a sense of purpose and unfulfilled by my
+          daily activities.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      4. How satisfied are you with the variety and novelty of experiences in
+      your life?
+    </p>
+    <div>
+      <input type="radio" name="Q4" id="QA4" />
+      <label for="QA4"
+        ><p style="text-align: left">
+          I regularly seek out new adventures and feel enriched by my
+          experiences.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q4" id="QB4" />
+      <label for="QB4"
+        ><p style="text-align: left">
+          I have meaningful experiences occasionally, but I could do more.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q4" id="QC4" />
+      <label for="QC4"
+        ><p style="text-align: left">
+          I rarely step out of my comfort zone to try new things.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q4" id="QD4" />
+      <label for="QD4"
+        ><p style="text-align: left">
+          My life feels monotonous, and I lack stimulating experiences.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      5. How connected do you feel to something greater than yourself, whether
+      it be nature, spirituality, or a higher power?
+    </p>
+    <div>
+      <input type="radio" name="Q5" id="QA5" />
+      <label for="QA5"
+        ><p style="text-align: left">
+          I feel deeply connected and find comfort and guidance in my
+          spirituality.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q5" id="QB5" />
+      <label for="QB5"
+        ><p style="text-align: left">
+          I have a sense of spirituality, but it's not a central part of my
+          life.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q5" id="QC5" />
+      <label for="QC5"
+        ><p style="text-align: left">
+          I occasionally think about spirituality but don’t actively pursue it.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q5" id="QD5" />
+      <label for="QD5"
+        ><p style="text-align: left">
+          I feel disconnected from any sense of spirituality or higher purpose.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      6. How financially stable do you feel, and how satisfied are you with your
+      financial situation?
+    </p>
+    <div>
+      <input type="radio" name="Q6" id="QA6" />
+      <label for="QA6"
+        ><p style="text-align: left">
+          I feel secure and confident in my financial stability.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q6" id="QB6" />
+      <label for="QB6"
+        ><p style="text-align: left">
+          I manage my finances well, but there’s room for improvement.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q6" id="QC6" />
+      <label for="QC6"
+        ><p style="text-align: left">
+          Financial stability is a concern, and I often feel stressed about
+          money.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q6" id="QD6" />
+      <label for="QD6"
+        ><p style="text-align: left">
+          I struggle significantly with my finances and feel overwhelmed by
+          financial stress.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      7. How much do you feel you are growing and evolving as a person?
+    </p>
+    <div>
+      <input type="radio" name="Q7" id="QA7" />
+      <label for="QA7"
+        ><p style="text-align: left">
+          I am constantly learning and feel like I am becoming my best self.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q7" id="QB7" />
+      <label for="QB7"
+        ><p style="text-align: left">
+          I engage in personal growth, but it’s not as frequent as I’d like.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q7" id="QC7" />
+      <label for="QC7"
+        ><p style="text-align: left">
+          I occasionally think about personal growth, but it’s not a priority.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="Q7" id="QD7" />
+      <label for="QD7"
+        ><p style="text-align: left">
+          I feel stagnant and haven’t focused on personal growth.
+        </p>
+      </label>
+    </div>
+  </div>
+
+  <div class="next">
+    <button onclick="nextfunc()">NEXT</button>
+  </div>
+
+  <div class="progressbar">
+    <div id="q-cur-progress" class="progress"></div>
+    <span id="q-cur-progress-val">0/7</span>
+  </div>
+</div>
+
+<div id="accelerators" class="accelerators">
+  <div class="navbar">
+    <img
+      src="https://storage.googleapis.com/msgsndr/aaSJWzluQYS0JEPnILtJ/media/669412128e395dc176f57b4a.png"
+      alt="ishift-logo"
+      class="ishift-logo"
+    />
+    <span>THE LIFESCORE ASSESSMENT</span>
+  </div>
+  <div id="Aerror" class="error">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="15"
+      fill="red"
+      viewBox="0 0 512 512"
+    >
+      <path
+        d="M504 256c0 137-111 248-248 248S8 393 8 256C8 119.1 119 8 256 8s248 111.1 248 248zm-248 50c-25.4 0-46 20.6-46 46s20.6 46 46 46 46-20.6 46-46-20.6-46-46-46zm-43.7-165.3l7.4 136c.3 6.4 5.6 11.3 12 11.3h48.5c6.4 0 11.6-5 12-11.3l7.4-136c.4-6.9-5.1-12.7-12-12.7h-63.4c-6.9 0-12.4 5.8-12 12.7z"
+      />
+    </svg>
+    <span>
+      There was a problem with your submission. Please review the fields below.
+    </span>
+  </div>
+  <div class="h1-choose">
+    <h1>Choose the phrase from each group that<br />best describes you</h1>
+  </div>
+  <div class="options">
+    <p class="question">
+      1. How much do you feel you have control over your time and how
+      effectively are you able to manage it?
+    </p>
+    <div>
+      <input type="radio" name="A1" id="AA1" />
+      <label for="AA1"
+        ><p style="text-align: left">
+          I feel completely in control and manage my time very effectively.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A1" id="AB1" />
+      <label for="AB1"
+        ><p style="text-align: left">
+          I generally manage my time well but sometimes struggle with balance.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A1" id="AC1" />
+      <label for="AC1"
+        ><p style="text-align: left">
+          I often feel like time slips away from me and I struggle to manage it
+          effectively.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A1" id="AD1" />
+      <label for="AD1"
+        ><p style="text-align: left">
+          I feel overwhelmed and unable to manage my time at all.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div id="mopt" class="options">
+    <p class="question">
+      2. How would you rate your overall energy levels and sense of vitality
+      throughout the day?
+    </p>
+    <div>
+      <input type="radio" name="A2" id="AA2" />
+      <label for="AA2"
+        ><p style="text-align: left">
+          I feel energetic and vibrant throughout the day.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A2" id="AB2" />
+      <label for="AB2"
+        ><p style="text-align: left">
+          I have good energy levels but experience occasional dips.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A2" id="AC2" />
+      <label for="AC2"
+        ><p style="text-align: left">
+          My energy levels are inconsistent and I often feel tired.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A2" id="AD2" />
+      <label for="AD2"
+        ><p style="text-align: left">
+          I feel drained and lacking in energy most of the time.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">3. How would you rate your daily stress levels?</p>
+    <div>
+      <input type="radio" name="A3" id="AA3" />
+      <label for="AA3"
+        ><p style="text-align: left">
+          I experience little to no stress on a daily basis.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A3" id="AB3" />
+      <label for="AB3"
+        ><p style="text-align: left">
+          I have manageable stress that I can handle most of the time.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A3" id="AC3" />
+      <label for="AC3"
+        ><p style="text-align: left">
+          I often feel stressed and it impacts my daily life.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A3" id="AD3" />
+      <label for="AD3"
+        ><p style="text-align: left">
+          I feel extremely stressed and it significantly affects my well-being.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      4. How would you rate your current workload or responsibilities?
+    </p>
+    <div>
+      <input type="radio" name="A4" id="AA4" />
+      <label for="AA4"
+        ><p style="text-align: left">
+          I feel my workload is perfectly balanced and manageable.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A4" id="AB4" />
+      <label for="AB4"
+        ><p style="text-align: left">
+          My workload is manageable but occasionally overwhelming.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A4" id="AC4" />
+      <label for="AC4"
+        ><p style="text-align: left">
+          I often feel overwhelmed by my workload.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A4" id="AD4" />
+      <label for="AD4"
+        ><p style="text-align: left">
+          I feel constantly overwhelmed and unable to keep up with my
+          responsibilities.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      5. How would you rate the impact of your financial obligations on your
+      well-being? power?
+    </p>
+    <div>
+      <input type="radio" name="A5" id="AA5" />
+      <label for="AA5"
+        ><p style="text-align: left">
+          I feel no burden from my financial obligations.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A5" id="AB5" />
+      <label for="AB5"
+        ><p style="text-align: left">
+          I have some financial obligations but they are manageable.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A5" id="AC5" />
+      <label for="AC5"
+        ><p style="text-align: left">
+          My financial obligations often feel burdensome.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A5" id="AD5" />
+      <label for="AD5"
+        ><p style="text-align: left">
+          I feel very burdened by my financial obligations and they
+          significantly impact my well-being.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      6. How would you rate the effect of health issues or concerns on your
+      daily life?
+    </p>
+    <div>
+      <input type="radio" name="A6" id="AA6" />
+      <label for="AA6"
+        ><p style="text-align: left">
+          I have no health issues impacting my daily life.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A6" id="AB6" />
+      <label for="AB6"
+        ><p style="text-align: left">
+          I have minor health concerns that occasionally affect me.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A6" id="AC6" />
+      <label for="AC6"
+        ><p style="text-align: left">
+          My health issues frequently impact my daily activities.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A6" id="AD6" />
+      <label for="AD6"
+        ><p style="text-align: left">
+          My health issues significantly impact my daily life and well-being.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      7. How would you rate your time availability considering your various
+      commitments?
+    </p>
+    <div>
+      <input type="radio" name="A7" id="AA7" />
+      <label for="AA7"
+        ><p style="text-align: left">
+          I have plenty of free time and feel my commitments are well-balanced.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A7" id="AB7" />
+      <label for="AB7"
+        ><p style="text-align: left">
+          I have some free time but often feel busy.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A7" id="AC7" />
+      <label for="AC7"
+        ><p style="text-align: left">
+          I frequently feel consumed by my commitments with little free time.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A7" id="AD7" />
+      <label for="AD7"
+        ><p style="text-align: left">
+          I feel completely consumed by my commitments and have no free time.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      8. How would you rate the impact of personal responsibilities such as
+      caregiving or household duties on your well-being?
+    </p>
+    <div>
+      <input type="radio" name="A8" id="AA8" />
+      <label for="AA8"
+        ><p style="text-align: left">
+          I do not feel weighed down by personal responsibilities.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A8" id="AB8" />
+      <label for="AB8"
+        ><p style="text-align: left">
+          My personal responsibilities are manageable but sometimes stressful.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A8" id="AC8" />
+      <label for="AC8"
+        ><p style="text-align: left">
+          I often feel weighed down by personal responsibilities.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A8" id="AD8" />
+      <label for="AD8"
+        ><p style="text-align: left">
+          I feel very weighed down and overwhelmed by personal responsibilities.
+        </p>
+      </label>
+    </div>
+  </div>
+  <div class="options">
+    <p class="question">
+      9. How would you rate the effect of external factors (e.g., other people,
+      your teams, your kids, your family, your job, politics, religion) on your
+      overall well-being?
+    </p>
+    <div>
+      <input type="radio" name="A9" id="AA9" />
+      <label for="AA9"
+        ><p style="text-align: left">
+          External factors have no impact on my well-being.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A9" id="AB9" />
+      <label for="AB9"
+        ><p style="text-align: left">
+          External factors occasionally impact my well-being.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A9" id="AC9" />
+      <label for="AC9"
+        ><p style="text-align: left">
+          External factors frequently impact my well-being.
+        </p>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="A9" id="AD9" />
+      <label for="AD9"
+        ><p style="text-align: left">
+          External factors significantly impact my well-being and cause
+          considerable stress.
+        </p>
+      </label>
+    </div>
+  </div>
+
+  <div class="prefinal">
+    <button onclick="prevfunc()" class="prev">←PREVIOUS</button>
+    <button ondblclick="finalfunc()" class="final">FINAL STEP</button>
+  </div>
+
+  <div class="progressbar">
+    <div id="cur-progress" class="progress"></div>
+    <span id="cur-progress-val">0/9</span>
+  </div>
+</div>
+
+<!-- <script>
+  const inputs = document.querySelectorAll('input[type="radio"]');
+  let A_progress = 0;
+  let Q_progress = 0;
+  const answers_choosen = {
+    Q1: "",
+    Q2: "",
+    Q3: "",
+    Q4: "",
+    Q5: "",
+    Q6: "",
+    Q7: "",
+    A1: "",
+    A2: "",
+    A3: "",
+    A4: "",
+    A5: "",
+    A6: "",
+    A7: "",
+    A8: "",
+    A9: "",
+  };
+  let Q_choosen = {
+    Q1: "",
+    Q2: "",
+    Q3: "",
+    Q4: "",
+    Q5: "",
+    Q6: "",
+    Q7: "",
+  };
+  let A_choosen = {
+    A1: "",
+    A2: "",
+    A3: "",
+    A4: "",
+    A5: "",
+    A6: "",
+    A7: "",
+    A8: "",
+    A9: "",
+  };
+  inputs.forEach((input) => {
+    input.addEventListener("click", (event) => {
+      const elementname = event.target.name;
+      const elementid = event.target.id;
+      answers_choosen[elementname] = elementid;
+      if (elementname.search("A") > -1) {
+        A_choosen[elementname] = elementid;
+        updateProgressbar("A");
+      } else if (elementname.search("Q") > -1) {
+        Q_choosen[elementname] = elementid;
+        updateProgressbar("Q");
+      }
+      //   console.log(answers_choosen, A_choosen, Q_choosen);
+    });
+  });
+  function updateProgressbar(p_type) {
+    if (p_type == "A") {
+      A_progress = 0;
+      let values = Object.values(A_choosen);
+      for (let i = 0; i < values.length; i++) {
+        if (values[i] != "") {
+          A_progress += 1;
+        }
+      }
+      let progress_val = Math.round((A_progress / 9) * 100);
+      //   console.log({ progress_val });
+
+      let cur_progress_val = document.getElementById("cur-progress-val");
+      let cur_progress = document.getElementById("cur-progress");
+      cur_progress_val.innerHTML = `${A_progress}/9`;
+      cur_progress.style.width = `${progress_val}%`;
+    } else if (p_type == "Q") {
+      Q_progress = 0;
+      let values = Object.values(Q_choosen);
+      for (let i = 0; i < values.length; i++) {
+        if (values[i] != "") {
+          Q_progress += 1;
+        }
+      }
+      let progress_val = Math.round((Q_progress / 7) * 100);
+      //   console.log({ progress_val });
+
+      let cur_progress_val = document.getElementById("q-cur-progress-val");
+      let cur_progress = document.getElementById("q-cur-progress");
+      cur_progress_val.innerHTML = `${Q_progress}/7`;
+      cur_progress.style.width = `${progress_val}%`;
+    }
+  }
+  function nextfunc() {
+    if (Q_progress === 7) {
+      quiz.style.display = "none";
+      accelerators.style.display = "block";
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      Qerror.style.display = "flex";
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }
+  function finalfunc() {
+    // quiz.style.display = "block";
+    // accelerators.style.display = "none";
+    var { total_A, total_B, total_C, total_D } = calcAResult();
+    var { total_A: A, total_B: B, total_C: C, total_D: D } = calcQResult();
+    let A_sum = total_A + A;
+    let B_sum = total_B + B;
+    let C_sum = total_C + C;
+    let D_sum = total_D + D;
+    console.log(A_sum, B_sum, C_sum, D_sum);
+    let myval = 
+  }
+  function prevfunc() {
+    quiz.style.display = "block";
+    accelerators.style.display = "none";
+  }
+
+  function calcAResult() {
+    let total_A = 0;
+    let total_B = 0;
+    let total_C = 0;
+    let total_D = 0;
+    let Avalues = Object.values(A_choosen);
+    for (let i = 0; i < Avalues.length; i++) {
+      if (Avalues[i][1] == "A") {
+        total_A += 1;
+      } else if (Avalues[i][1] == "B") {
+        total_B += 1;
+      } else if (Avalues[i][1] == "C") {
+        total_C += 1;
+      } else if (Avalues[i][1] == "D") {
+        total_D += 1;
+      }
+    }
+    return { Avalues, total_A, total_B, total_C, total_D };
+  }
+  function calcQResult() {
+    let total_A = 0;
+    let total_B = 0;
+    let total_C = 0;
+    let total_D = 0;
+    let Qvalues = Object.values(Q_choosen);
+    for (let i = 0; i < Qvalues.length; i++) {
+      if (Qvalues[i][1] == "A") {
+        total_A += 1;
+      } else if (Qvalues[i][1] == "B") {
+        total_B += 1;
+      } else if (Qvalues[i][1] == "C") {
+        total_C += 1;
+      } else if (Qvalues[i][1] == "D") {
+        total_D += 1;
+      }
+    }
+    return { total_A, total_B, total_C, total_D };
+  } -->
