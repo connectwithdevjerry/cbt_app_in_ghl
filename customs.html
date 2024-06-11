@@ -1106,75 +1106,75 @@
    </div>
  
    <!-- Finish button -->
-   <!-- <div class="prefinal">
+   <div class="prefinal">
      <button onclick="prevfunc()" class="prev">←PREVIOUS</button>
      <button onclick="finalfunc()" class="final">FINAL STEP</button>
-   </div> -->
+   </div>
  
    <!-- progress bar -->
-   <!-- <div class="progressbar">
+   <div class="progressbar">
      <div id="cur-progress" class="progress"></div>
      <span id="cur-progress-val">0/9</span>
-   </div> -->
+   </div>
  </div>
  
  <script>
-  //  const inputs = document.querySelectorAll('input[type="radio"]');
-  //  let A_progress = 0;
-  //  let Q_progress = 0;
-  //  const answers_choosen = {
-  //    Q1: "",
-  //    Q2: "",
-  //    Q3: "",
-  //    Q4: "",
-  //    Q5: "",
-  //    Q6: "",
-  //    Q7: "",
-  //    A1: "",
-  //    A2: "",
-  //    A3: "",
-  //    A4: "",
-  //    A5: "",
-  //    A6: "",
-  //    A7: "",
-  //    A8: "",
-  //    A9: "",
-  //  };
-  //  let Q_choosen = {
-  //    Q1: "",
-  //    Q2: "",
-  //    Q3: "",
-  //    Q4: "",
-  //    Q5: "",
-  //    Q6: "",
-  //    Q7: "",
-  //  };
-  //  let A_choosen = {
-  //    A1: "",
-  //    A2: "",
-  //    A3: "",
-  //    A4: "",
-  //    A5: "",
-  //    A6: "",
-  //    A7: "",
-  //    A8: "",
-  //    A9: "",
-  //  };
-  //  inputs.forEach((input) => {
-  //    input.addEventListener("click", (event) => {
-  //      const elementname = event.target.name;
-  //      const elementid = event.target.id;
-  //      answers_choosen[elementname] = elementid;
-  //      if (elementname.search("A") > -1) {
-  //        A_choosen[elementname] = elementid;
-  //        updateProgressbar("A");
-  //      } else if (elementname.search("Q") > -1) {
-  //        Q_choosen[elementname] = elementid;
-  //        updateProgressbar("Q");
-  //      }
-  //      //   console.log(answers_choosen, A_choosen, Q_choosen);
-  //    });
-  //  });
+   const inputs = document.querySelectorAll('input[type="radio"]');
+   let A_progress = 0;
+   let Q_progress = 0;
+   const answers_choosen = {
+     Q1: "",
+     Q2: "",
+     Q3: "",
+     Q4: "",
+     Q5: "",
+     Q6: "",
+     Q7: "",
+     A1: "",
+     A2: "",
+     A3: "",
+     A4: "",
+     A5: "",
+     A6: "",
+     A7: "",
+     A8: "",
+     A9: "",
+   };
+   let Q_choosen = {
+     Q1: "",
+     Q2: "",
+     Q3: "",
+     Q4: "",
+     Q5: "",
+     Q6: "",
+     Q7: "",
+   };
+   let A_choosen = {
+     A1: "",
+     A2: "",
+     A3: "",
+     A4: "",
+     A5: "",
+     A6: "",
+     A7: "",
+     A8: "",
+     A9: "",
+   };
+   inputs.forEach((input) => {
+     input.addEventListener("click", (event) => {
+       const elementname = event.target.name;
+       const elementid = event.target.id;
+       answers_choosen[elementname] = elementid;
+       if (elementname.search("A") > -1) {
+         A_choosen[elementname] = elementid;
+         updateProgressbar("A");
+       } else if (elementname.search("Q") > -1) {
+         Q_choosen[elementname] = elementid;
+         updateProgressbar("Q");
+       }
+       //   console.log(answers_choosen, A_choosen, Q_choosen);
+     });
+   });
   //  function updateProgressbar(p_type) {
   //    if (p_type == "A") {
   //      A_progress = 0;
