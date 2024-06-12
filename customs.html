@@ -1175,39 +1175,39 @@
        //   console.log(answers_choosen, A_choosen, Q_choosen);
      });
    });
-  //  function updateProgressbar(p_type) {
-  //    if (p_type == "A") {
-  //      A_progress = 0;
-  //      let values = Object.values(A_choosen);
-  //      for (let i = 0; i < values.length; i++) {
-  //        if (values[i] != "") {
-  //          A_progress += 1;
-  //        }
-  //      }
-  //      let progress_val = Math.round((A_progress / 9) * 100);
-  //      //   console.log({ progress_val });
+   function updateProgressbar(p_type) {
+     if (p_type == "A") {
+       A_progress = 0;
+       let values = Object.values(A_choosen);
+       for (let i = 0; i < values.length; i++) {
+         if (values[i] != "") {
+           A_progress += 1;
+         }
+       }
+       let progress_val = Math.round((A_progress / 9) * 100);
+       //   console.log({ progress_val });
  
-  //      let cur_progress_val = document.getElementById("cur-progress-val");
-  //      let cur_progress = document.getElementById("cur-progress");
-  //      cur_progress_val.innerHTML = `${A_progress}/9`;
-  //      cur_progress.style.width = `${progress_val}%`;
-  //    } else if (p_type == "Q") {
-  //      Q_progress = 0;
-  //      let values = Object.values(Q_choosen);
-  //      for (let i = 0; i < values.length; i++) {
-  //        if (values[i] != "") {
-  //          Q_progress += 1;
-  //        }
-  //      }
-  //      let progress_val = Math.round((Q_progress / 7) * 100);
-  //      //   console.log({ progress_val });
+       let cur_progress_val = document.getElementById("cur-progress-val");
+       let cur_progress = document.getElementById("cur-progress");
+       cur_progress_val.innerHTML = `${A_progress}/9`;
+       cur_progress.style.width = `${progress_val}%`;
+     } else if (p_type == "Q") {
+       Q_progress = 0;
+       let values = Object.values(Q_choosen);
+       for (let i = 0; i < values.length; i++) {
+         if (values[i] != "") {
+           Q_progress += 1;
+         }
+       }
+       let progress_val = Math.round((Q_progress / 7) * 100);
+       //   console.log({ progress_val });
  
-  //      let cur_progress_val = document.getElementById("q-cur-progress-val");
-  //      let cur_progress = document.getElementById("q-cur-progress");
-  //      cur_progress_val.innerHTML = `${Q_progress}/7`;
-  //      cur_progress.style.width = `${progress_val}%`;
-  //    }
-  //  }
+       let cur_progress_val = document.getElementById("q-cur-progress-val");
+       let cur_progress = document.getElementById("q-cur-progress");
+       cur_progress_val.innerHTML = `${Q_progress}/7`;
+       cur_progress.style.width = `${progress_val}%`;
+     }
+   }
   //  function nextfunc() {
   //    if (Q_progress === 7) {
   //      quiz.style.display = "none";
