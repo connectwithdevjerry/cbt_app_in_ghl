@@ -1208,78 +1208,78 @@
        cur_progress.style.width = `${progress_val}%`;
      }
    }
-  //  function nextfunc() {
-  //    if (Q_progress === 7) {
-  //      quiz.style.display = "none";
-  //      accelerators.style.display = "block";
-  //      window.scrollTo({
-  //        top: 0,
-  //        behavior: "smooth",
-  //      });
-  //    } else {
-  //      Qerror.style.display = "flex";
-  //      window.scrollTo({
-  //        top: 0,
-  //        behavior: "smooth",
-  //      });
-  //    }
-  //  }
-  //  function finalfunc() {
-  //    // quiz.style.display = "block";
-  //    // accelerators.style.display = "none";
-  //    var { total_A, total_B, total_C, total_D } = calcAResult();
-  //    var { total_A: A, total_B: B, total_C: C, total_D: D } = calcQResult();
-  //    // old formular calculation
-  //    let A_sum = (total_A + A) * 6.25;
-  //    let B_sum = (total_B + B) * 5.25;
-  //    let C_sum = (total_C + C) * 4.25;
-  //    let D_sum = (total_D + D) * 3.25;
-  //    let formcode = A_sum + B_sum + C_sum + D_sum;
-  //    localStorage.setItem("formcode", formcode);
-  //    // localStorage.setItem("ishift_A", total_A + A);
-  //    // localStorage.setItem("ishift_B", total_B + B);
-  //    // localStorage.setItem("ishift_C", total_C + C);
-  //    // localStorage.setItem("ishift_D", total_D + D);
+   function nextfunc() {
+     if (Q_progress === 7) {
+       quiz.style.display = "none";
+       accelerators.style.display = "block";
+       window.scrollTo({
+         top: 0,
+         behavior: "smooth",
+       });
+     } else {
+       Qerror.style.display = "flex";
+       window.scrollTo({
+         top: 0,
+         behavior: "smooth",
+       });
+     }
+   }
+   function finalfunc() {
+     // quiz.style.display = "block";
+     // accelerators.style.display = "none";
+     var { total_A, total_B, total_C, total_D } = calcAResult();
+     var { total_A: A, total_B: B, total_C: C, total_D: D } = calcQResult();
+     // old formular calculation
+     let A_sum = (total_A + A) * 6.25;
+     let B_sum = (total_B + B) * 5.25;
+     let C_sum = (total_C + C) * 4.25;
+     let D_sum = (total_D + D) * 3.25;
+     let formcode = A_sum + B_sum + C_sum + D_sum;
+     localStorage.setItem("formcode", formcode);
+     // localStorage.setItem("ishift_A", total_A + A);
+     // localStorage.setItem("ishift_B", total_B + B);
+     // localStorage.setItem("ishift_C", total_C + C);
+     // localStorage.setItem("ishift_D", total_D + D);
  
-  //    // New Formular Calculation
-  //    let { Q1, Q2, Q3, Q4, Q5, Q6, Q7, A1, A2, A3, A4, A5, A6, A7, A8, A9 } =
-  //      answers_choosen;
-  //    let opt_v = { A: 4, B: 3, C: 2, D: 1 };
-  //    let Q1_m = Math.round((opt_v[Q1[1]] + opt_v[A1[1]]) / 2);
-  //    let Q2_m = Math.round((opt_v[Q2[1]] + opt_v[A2[1]]) / 2);
-  //    let Q3_m = Math.round((opt_v[Q3[1]] + opt_v[A3[1]]) / 2);
-  //    let Q4_m = Math.round((opt_v[Q4[1]] + opt_v[A4[1]]) / 2);
-  //    let Q5_m = Math.round((opt_v[Q5[1]] + opt_v[A5[1]]) / 2);
-  //    let Q6_m = Math.round((opt_v[Q6[1]] + opt_v[A6[1]]) / 2);
-  //    let Q7_m = Math.round((opt_v[Q7[1]] + opt_v[A7[1]]) / 2);
+     // New Formular Calculation
+     let { Q1, Q2, Q3, Q4, Q5, Q6, Q7, A1, A2, A3, A4, A5, A6, A7, A8, A9 } =
+       answers_choosen;
+     let opt_v = { A: 4, B: 3, C: 2, D: 1 };
+     let Q1_m = Math.round((opt_v[Q1[1]] + opt_v[A1[1]]) / 2);
+     let Q2_m = Math.round((opt_v[Q2[1]] + opt_v[A2[1]]) / 2);
+     let Q3_m = Math.round((opt_v[Q3[1]] + opt_v[A3[1]]) / 2);
+     let Q4_m = Math.round((opt_v[Q4[1]] + opt_v[A4[1]]) / 2);
+     let Q5_m = Math.round((opt_v[Q5[1]] + opt_v[A5[1]]) / 2);
+     let Q6_m = Math.round((opt_v[Q6[1]] + opt_v[A6[1]]) / 2);
+     let Q7_m = Math.round((opt_v[Q7[1]] + opt_v[A7[1]]) / 2);
  
-  //    let ishift_rss = Math.round(((Q1_m + Q3_m + Q7_m + opt_v[A9[1]]) / 4) * 25);
-  //    let ishift_hwi = Math.round(((Q2_m + Q6_m) / 2) * 25);
-  //    let ishift_pas = Math.round(((Q3_m + Q5_m) / 2) * 25);
-  //    let ishift_ees = Math.round(((Q4_m + Q7_m) / 2) * 25);
-  //    let ishift_sci = Q5_m * 25;
-  //    let ishift_fss = Math.round(((Q6_m + opt_v[A8[1]] + Q5_m) / 3) * 25);
-  //    let ishift_pgi = Math.round(((Q7_m + opt_v[A8[1]]) / 2) * 25);
-  //    let ishift_rol = Math.round(
-  //      (ishift_rss +
-  //        ishift_hwi +
-  //        ishift_pas +
-  //        ishift_ees +
-  //        ishift_sci +
-  //        ishift_fss +
-  //        ishift_pgi) /
-  //        7
-  //    );
+     let ishift_rss = Math.round(((Q1_m + Q3_m + Q7_m + opt_v[A9[1]]) / 4) * 25);
+     let ishift_hwi = Math.round(((Q2_m + Q6_m) / 2) * 25);
+     let ishift_pas = Math.round(((Q3_m + Q5_m) / 2) * 25);
+     let ishift_ees = Math.round(((Q4_m + Q7_m) / 2) * 25);
+     let ishift_sci = Q5_m * 25;
+     let ishift_fss = Math.round(((Q6_m + opt_v[A8[1]] + Q5_m) / 3) * 25);
+     let ishift_pgi = Math.round(((Q7_m + opt_v[A8[1]]) / 2) * 25);
+     let ishift_rol = Math.round(
+       (ishift_rss +
+         ishift_hwi +
+         ishift_pas +
+         ishift_ees +
+         ishift_sci +
+         ishift_fss +
+         ishift_pgi) /
+         7
+     );
  
-  //    localStorage.setItem("ishift_rss", `${ishift_rss}%`);
-  //    localStorage.setItem("ishift_hwi", `${ishift_hwi}%`);
-  //    localStorage.setItem("ishift_pas", `${ishift_pas}%`);
-  //    localStorage.setItem("ishift_ees", `${ishift_ees}%`);
-  //    localStorage.setItem("ishift_sci", `${ishift_sci}%`);
-  //    localStorage.setItem("ishift_fss", `${ishift_fss}%`);
-  //    localStorage.setItem("ishift_pgi", `${ishift_pgi}%`);
-  //    localStorage.setItem("ishift_rol", `${ishift_rol}%`);
-  //    localStorage.setItem("formcode", ishift_rol);
+     localStorage.setItem("ishift_rss", `${ishift_rss}%`);
+     localStorage.setItem("ishift_hwi", `${ishift_hwi}%`);
+     localStorage.setItem("ishift_pas", `${ishift_pas}%`);
+     localStorage.setItem("ishift_ees", `${ishift_ees}%`);
+     localStorage.setItem("ishift_sci", `${ishift_sci}%`);
+     localStorage.setItem("ishift_fss", `${ishift_fss}%`);
+     localStorage.setItem("ishift_pgi", `${ishift_pgi}%`);
+     localStorage.setItem("ishift_rol", `${ishift_rol}%`);
+     localStorage.setItem("formcode", ishift_rol);
  
   //    if (ishift_rol >= 90) {
   //      window.location.href = `https://ishft.life/formpage-page`;
