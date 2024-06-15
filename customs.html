@@ -1281,40 +1281,40 @@
      localStorage.setItem("ishift_rol", `${ishift_rol}%`);
      localStorage.setItem("formcode", ishift_rol);
  
-  //    if (ishift_rol >= 90) {
-  //      window.location.href = `https://ishft.life/formpage-page`;
-  //    } else if (ishift_rol >= 75) {
-  //      window.location.href = `https://ishft.life/formpage-page-8741`;
-  //    } else if (ishift_rol >= 50) {
-  //      window.location.href = `https://ishft.life/formpage-page-8741-7854-6197`;
-  //    } else {
-  //      window.location.href = `https://ishft.life/formpage-page-8741-7854`;
-  //    }
-  //  }
-  //  function prevfunc() {
-  //    quiz.style.display = "block";
-  //    accelerators.style.display = "none";
-  //  }
+     if (ishift_rol >= 90) {
+       window.location.href = `https://ishft.life/formpage-page`;
+     } else if (ishift_rol >= 75) {
+       window.location.href = `https://ishft.life/formpage-page-8741`;
+     } else if (ishift_rol >= 50) {
+       window.location.href = `https://ishft.life/formpage-page-8741-7854-6197`;
+     } else {
+       window.location.href = `https://ishft.life/formpage-page-8741-7854`;
+     }
+   }
+   function prevfunc() {
+     quiz.style.display = "block";
+     accelerators.style.display = "none";
+   }
  
-  //  function calcAResult() {
-  //    let total_A = 0;
-  //    let total_B = 0;
-  //    let total_C = 0;
-  //    let total_D = 0;
-  //    let Avalues = Object.values(A_choosen);
-  //    for (let i = 0; i < Avalues.length; i++) {
-  //      if (Avalues[i][1] == "A") {
-  //        total_A += 1;
-  //      } else if (Avalues[i][1] == "B") {
-  //        total_B += 1;
-  //      } else if (Avalues[i][1] == "C") {
-  //        total_C += 1;
-  //      } else if (Avalues[i][1] == "D") {
-  //        total_D += 1;
-  //      }
-  //    }
-  //    return { Avalues, total_A, total_B, total_C, total_D };
-  //  }
+   function calcAResult() {
+     let total_A = 0;
+     let total_B = 0;
+     let total_C = 0;
+     let total_D = 0;
+     let Avalues = Object.values(A_choosen);
+     for (let i = 0; i < Avalues.length; i++) {
+       if (Avalues[i][1] == "A") {
+         total_A += 1;
+       } else if (Avalues[i][1] == "B") {
+         total_B += 1;
+       } else if (Avalues[i][1] == "C") {
+         total_C += 1;
+       } else if (Avalues[i][1] == "D") {
+         total_D += 1;
+       }
+     }
+     return { Avalues, total_A, total_B, total_C, total_D };
+   }
   //  function calcQResult() {
   //    let total_A = 0;
   //    let total_B = 0;
