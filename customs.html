@@ -1315,33 +1315,33 @@
      }
      return { Avalues, total_A, total_B, total_C, total_D };
    }
-  //  function calcQResult() {
-  //    let total_A = 0;
-  //    let total_B = 0;
-  //    let total_C = 0;
-  //    let total_D = 0;
-  //    let Qvalues = Object.values(Q_choosen);
-  //    for (let i = 0; i < Qvalues.length; i++) {
-  //      if (Qvalues[i][1] == "A") {
-  //        total_A += 1;
-  //      } else if (Qvalues[i][1] == "B") {
-  //        total_B += 1;
-  //      } else if (Qvalues[i][1] == "C") {
-  //        total_C += 1;
-  //      } else if (Qvalues[i][1] == "D") {
-  //        total_D += 1;
-  //      }
-  //    }
-  //    return { total_A, total_B, total_C, total_D };
-  //  }
-  //  function inputClickNextQ(event, accel = null) {
-  //    if (accel) {
-  //      var element = document.getElementById(`mopta${event.target.name[1]}`);
-  //    } else {
-  //      var element = document.getElementById(`mopt${event.target.name[1]}`);
-  //    }
-  //    var pos1 = element.offsetTop;
-  //    window.scrollTo(0, pos1 + 200);
-  //  }
+   function calcQResult() {
+     let total_A = 0;
+     let total_B = 0;
+     let total_C = 0;
+     let total_D = 0;
+     let Qvalues = Object.values(Q_choosen);
+     for (let i = 0; i < Qvalues.length; i++) {
+       if (Qvalues[i][1] == "A") {
+         total_A += 1;
+       } else if (Qvalues[i][1] == "B") {
+         total_B += 1;
+       } else if (Qvalues[i][1] == "C") {
+         total_C += 1;
+       } else if (Qvalues[i][1] == "D") {
+         total_D += 1;
+       }
+     }
+     return { total_A, total_B, total_C, total_D };
+   }
+   function inputClickNextQ(event, accel = null) {
+     if (accel) {
+       var element = document.getElementById(`mopta${event.target.name[1]}`);
+     } else {
+       var element = document.getElementById(`mopt${event.target.name[1]}`);
+     }
+     var pos1 = element.offsetTop;
+     window.scrollTo(0, pos1 + 200);
+   }
  </script>
  
