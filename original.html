@@ -1,4 +1,4 @@
-<!-- <style>
+<style>
   @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
   * {
@@ -151,7 +151,9 @@
     cursor: pointer;
   }
 </style>
+<!-- Quiz -->
 <div id="quiz" class="quiz">
+  <!-- logo -->
   <div class="navbar">
     <img
       src="https://storage.googleapis.com/msgsndr/aaSJWzluQYS0JEPnILtJ/media/669412128e395dc176f57b4a.png"
@@ -175,9 +177,12 @@
       There was a problem with your submission. Please review the fields below.
     </span>
   </div>
+  <!-- headline -->
   <div class="h1-choose">
     <h1>Choose the phrase from each group that<br />best describes you</h1>
   </div>
+  <!-- Options starts here -->
+  <!-- 1 -->
   <div class="options">
     <p class="question">
       1. How do you feel about your connections with loved ones and your broader
@@ -219,6 +224,7 @@
       </label>
     </div>
   </div>
+  <!-- 2 -->
   <div id="mopt" class="options">
     <p class="question">
       2. How would you describe your current state of physical and mental
@@ -257,6 +263,7 @@
       </label>
     </div>
   </div>
+  <!-- 3 -->
   <div class="options">
     <p class="question">
       3. How aligned do you feel with your life’s purpose and daily activities?
@@ -297,6 +304,7 @@
       </label>
     </div>
   </div>
+  <!-- 4 -->
   <div class="options">
     <p class="question">
       4. How satisfied are you with the variety and novelty of experiences in
@@ -336,6 +344,7 @@
       </label>
     </div>
   </div>
+  <!-- 5 -->
   <div class="options">
     <p class="question">
       5. How connected do you feel to something greater than yourself, whether
@@ -376,6 +385,7 @@
       </label>
     </div>
   </div>
+  <!-- 6 -->
   <div class="options">
     <p class="question">
       6. How financially stable do you feel, and how satisfied are you with your
@@ -416,6 +426,7 @@
       </label>
     </div>
   </div>
+  <!-- 7 -->
   <div class="options">
     <p class="question">
       7. How much do you feel you are growing and evolving as a person?
@@ -454,17 +465,21 @@
     </div>
   </div>
 
+  <!-- Finish button -->
   <div class="next">
     <button onclick="nextfunc()">NEXT</button>
   </div>
 
+  <!-- progress bar -->
   <div class="progressbar">
     <div id="q-cur-progress" class="progress"></div>
     <span id="q-cur-progress-val">0/7</span>
   </div>
 </div>
 
+<!-- Accelerators -->
 <div id="accelerators" class="accelerators">
+  <!-- logo -->
   <div class="navbar">
     <img
       src="https://storage.googleapis.com/msgsndr/aaSJWzluQYS0JEPnILtJ/media/669412128e395dc176f57b4a.png"
@@ -488,9 +503,12 @@
       There was a problem with your submission. Please review the fields below.
     </span>
   </div>
+  <!-- headline -->
   <div class="h1-choose">
     <h1>Choose the phrase from each group that<br />best describes you</h1>
   </div>
+  <!-- Options starts here -->
+  <!-- 1 -->
   <div class="options">
     <p class="question">
       1. How much do you feel you have control over your time and how
@@ -530,6 +548,7 @@
       </label>
     </div>
   </div>
+  <!-- 2 -->
   <div id="mopt" class="options">
     <p class="question">
       2. How would you rate your overall energy levels and sense of vitality
@@ -568,6 +587,7 @@
       </label>
     </div>
   </div>
+  <!-- 3 -->
   <div class="options">
     <p class="question">3. How would you rate your daily stress levels?</p>
     <div>
@@ -603,6 +623,7 @@
       </label>
     </div>
   </div>
+  <!-- 4 -->
   <div class="options">
     <p class="question">
       4. How would you rate your current workload or responsibilities?
@@ -641,6 +662,7 @@
       </label>
     </div>
   </div>
+  <!-- 5 -->
   <div class="options">
     <p class="question">
       5. How would you rate the impact of your financial obligations on your
@@ -680,6 +702,7 @@
       </label>
     </div>
   </div>
+  <!-- 6 -->
   <div class="options">
     <p class="question">
       6. How would you rate the effect of health issues or concerns on your
@@ -718,6 +741,7 @@
       </label>
     </div>
   </div>
+  <!-- 7 -->
   <div class="options">
     <p class="question">
       7. How would you rate your time availability considering your various
@@ -756,6 +780,7 @@
       </label>
     </div>
   </div>
+  <!-- 8 -->
   <div class="options">
     <p class="question">
       8. How would you rate the impact of personal responsibilities such as
@@ -794,6 +819,7 @@
       </label>
     </div>
   </div>
+  <!-- 9 -->
   <div class="options">
     <p class="question">
       9. How would you rate the effect of external factors (e.g., other people,
@@ -835,18 +861,20 @@
     </div>
   </div>
 
+  <!-- Finish button -->
   <div class="prefinal">
     <button onclick="prevfunc()" class="prev">←PREVIOUS</button>
     <button ondblclick="finalfunc()" class="final">FINAL STEP</button>
   </div>
 
+  <!-- progress bar -->
   <div class="progressbar">
     <div id="cur-progress" class="progress"></div>
     <span id="cur-progress-val">0/9</span>
   </div>
 </div>
 
-<!-- <script>
+<script>
   const inputs = document.querySelectorAll('input[type="radio"]');
   let A_progress = 0;
   let Q_progress = 0;
@@ -1006,4 +1034,5 @@
       }
     }
     return { total_A, total_B, total_C, total_D };
-  } -->
+  }
+</script>
